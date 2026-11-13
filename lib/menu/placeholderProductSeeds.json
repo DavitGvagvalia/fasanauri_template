@@ -1,0 +1,784 @@
+[
+  {
+    "id": "placeholder-khinkali",
+    "categoryId": "khinkali",
+    "title": {
+      "ka": "ხინკალი ქალაქური",
+      "en": "City-style khinkali",
+      "ru": "Хинкали городские"
+    },
+    "kind": "food",
+    "isPopular": true,
+    "placeIds": ["dolidze", "leonidze", "kazbegi", "baratashvili", "gorgasali"],
+    "description": {
+      "ka": "ხინკალი ქალაქური. მენიუს ნიმუშის აღწერა. საბოლოო მენიუში დაემატება ინგრედიენტებისა და პორციის დეტალები.",
+      "en": "City-style khinkali. A sample menu description. Ingredients and portion details will be added with the final menu.",
+      "ru": "Хинкали городские. Пример описания для меню. Состав и размер порции будут добавлены в окончательном меню."
+    }
+  },
+  {
+    "id": "placeholder-khachapuri",
+    "categoryId": "bakery",
+    "title": {
+      "ka": "ხაჭაპური იმერული",
+      "en": "Imeretian khachapuri",
+      "ru": "Хачапури по-имеретински"
+    },
+    "kind": "food",
+    "isPopular": true,
+    "placeIds": ["dolidze", "leonidze", "kazbegi", "baratashvili", "gorgasali"],
+    "description": {
+      "ka": "ხაჭაპური იმერული. მენიუს ნიმუშის აღწერა. საბოლოო მენიუში დაემატება ინგრედიენტებისა და პორციის დეტალები.",
+      "en": "Imeretian khachapuri. A sample menu description. Ingredients and portion details will be added with the final menu.",
+      "ru": "Хачапури по-имеретински. Пример описания для меню. Состав и размер порции будут добавлены в окончательном меню."
+    }
+  },
+  {
+    "id": "placeholder-mtsvadi",
+    "categoryId": "grill",
+    "title": {
+      "ka": "ღორის მწვადი",
+      "en": "Pork mtsvadi",
+      "ru": "Шашлык из свинины"
+    },
+    "kind": "food",
+    "isPopular": true,
+    "placeIds": ["dolidze", "leonidze", "kazbegi", "baratashvili", "gorgasali"],
+    "description": {
+      "ka": "ღორის მწვადი. მენიუს ნიმუშის აღწერა. საბოლოო მენიუში დაემატება ინგრედიენტებისა და პორციის დეტალები.",
+      "en": "Pork mtsvadi. A sample menu description. Ingredients and portion details will be added with the final menu.",
+      "ru": "Шашлык из свинины. Пример описания для меню. Состав и размер порции будут добавлены в окончательном меню."
+    }
+  },
+  {
+    "id": "placeholder-salad",
+    "categoryId": "salads",
+    "title": {
+      "ka": "კიტრი-პომიდვრის სალათი ნიგვზით",
+      "en": "Cucumber & tomato salad with walnuts",
+      "ru": "Салат из огурцов и помидоров с орехами"
+    },
+    "kind": "food",
+    "isPopular": true,
+    "placeIds": ["dolidze", "leonidze", "kazbegi", "baratashvili", "gorgasali"],
+    "description": {
+      "ka": "კიტრი-პომიდვრის სალათი ნიგვზით. მენიუს ნიმუშის აღწერა. საბოლოო მენიუში დაემატება ინგრედიენტებისა და პორციის დეტალები.",
+      "en": "Cucumber & tomato salad with walnuts. A sample menu description. Ingredients and portion details will be added with the final menu.",
+      "ru": "Салат из огурцов и помидоров с орехами. Пример описания для меню. Состав и размер порции будут добавлены в окончательном меню."
+    }
+  },
+  {
+    "id": "placeholder-lobio",
+    "categoryId": "hot-dishes",
+    "title": {
+      "ka": "ლობიო ქოთანში",
+      "en": "Lobio in a clay pot",
+      "ru": "Лобио в горшочке"
+    },
+    "kind": "food",
+    "isPopular": false,
+    "placeIds": ["dolidze", "leonidze", "kazbegi", "baratashvili", "gorgasali"],
+    "description": {
+      "ka": "ლობიო ქოთანში. მენიუს ნიმუშის აღწერა. საბოლოო მენიუში დაემატება ინგრედიენტებისა და პორციის დეტალები.",
+      "en": "Lobio in a clay pot. A sample menu description. Ingredients and portion details will be added with the final menu.",
+      "ru": "Лобио в горшочке. Пример описания для меню. Состав и размер порции будут добавлены в окончательном меню."
+    }
+  },
+  {
+    "id": "placeholder-lemonade",
+    "categoryId": "soft-drinks",
+    "title": {
+      "ka": "ლიმონათი",
+      "en": "Georgian lemonade",
+      "ru": "Грузинский лимонад"
+    },
+    "kind": "beverage",
+    "isPopular": false,
+    "placeIds": ["dolidze", "leonidze", "kazbegi", "baratashvili", "gorgasali"],
+    "description": {
+      "ka": "ლიმონათი. მენიუს ნიმუშის აღწერა. საბოლოო მენიუში დაემატება ინგრედიენტებისა და პორციის დეტალები.",
+      "en": "Georgian lemonade. A sample menu description. Ingredients and portion details will be added with the final menu.",
+      "ru": "Грузинский лимонад. Пример описания для меню. Состав и размер порции будут добавлены в окончательном меню."
+    }
+  },
+  {
+    "id": "placeholder-eggplant",
+    "categoryId": "cold-dishes",
+    "title": {
+      "ka": "ბადრიჯანი ნიგვზით",
+      "en": "Eggplant with walnuts",
+      "ru": "Баклажаны с орехами"
+    },
+    "kind": "food",
+    "isPopular": false,
+    "placeIds": ["leonidze"],
+    "description": {
+      "ka": "ბადრიჯანი ნიგვზით. მენიუს ნიმუშის აღწერა. საბოლოო მენიუში დაემატება ინგრედიენტებისა და პორციის დეტალები.",
+      "en": "Eggplant with walnuts. A sample menu description. Ingredients and portion details will be added with the final menu.",
+      "ru": "Баклажаны с орехами. Пример описания для меню. Состав и размер порции будут добавлены в окончательном меню."
+    }
+  },
+  {
+    "id": "placeholder-pkhali",
+    "categoryId": "cold-dishes",
+    "title": {
+      "ka": "ფხალის ასორტი",
+      "en": "Pkhali assortment",
+      "ru": "Ассорти пхали"
+    },
+    "kind": "food",
+    "isPopular": false,
+    "placeIds": ["kazbegi", "baratashvili"],
+    "description": {
+      "ka": "ფხალის ასორტი. მენიუს ნიმუშის აღწერა. საბოლოო მენიუში დაემატება ინგრედიენტებისა და პორციის დეტალები.",
+      "en": "Pkhali assortment. A sample menu description. Ingredients and portion details will be added with the final menu.",
+      "ru": "Ассорти пхали. Пример описания для меню. Состав и размер порции будут добавлены в окончательном меню."
+    }
+  },
+  {
+    "id": "placeholder-cheese",
+    "categoryId": "cold-dishes",
+    "title": {
+      "ka": "ქართული ყველის ასორტი",
+      "en": "Georgian cheese assortment",
+      "ru": "Ассорти грузинских сыров"
+    },
+    "kind": "food",
+    "isPopular": false,
+    "placeIds": ["baratashvili", "gorgasali"],
+    "description": {
+      "ka": "ქართული ყველის ასორტი. მენიუს ნიმუშის აღწერა. საბოლოო მენიუში დაემატება ინგრედიენტებისა და პორციის დეტალები.",
+      "en": "Georgian cheese assortment. A sample menu description. Ingredients and portion details will be added with the final menu.",
+      "ru": "Ассорти грузинских сыров. Пример описания для меню. Состав и размер порции будут добавлены в окончательном меню."
+    }
+  },
+  {
+    "id": "placeholder-chicken-salad",
+    "categoryId": "salads",
+    "title": {
+      "ka": "ქათმის სალათი",
+      "en": "Chicken salad",
+      "ru": "Куриный салат"
+    },
+    "kind": "food",
+    "isPopular": false,
+    "placeIds": ["gorgasali"],
+    "description": {
+      "ka": "ქათმის სალათი. მენიუს ნიმუშის აღწერა. საბოლოო მენიუში დაემატება ინგრედიენტებისა და პორციის დეტალები.",
+      "en": "Chicken salad. A sample menu description. Ingredients and portion details will be added with the final menu.",
+      "ru": "Куриный салат. Пример описания для меню. Состав и размер порции будут добавлены в окончательном меню."
+    }
+  },
+  {
+    "id": "placeholder-greek-salad",
+    "categoryId": "salads",
+    "title": {
+      "ka": "ბერძნული სალათი",
+      "en": "Greek salad",
+      "ru": "Греческий салат"
+    },
+    "kind": "food",
+    "isPopular": false,
+    "placeIds": ["dolidze", "leonidze"],
+    "description": {
+      "ka": "ბერძნული სალათი. მენიუს ნიმუშის აღწერა. საბოლოო მენიუში დაემატება ინგრედიენტებისა და პორციის დეტალები.",
+      "en": "Greek salad. A sample menu description. Ingredients and portion details will be added with the final menu.",
+      "ru": "Греческий салат. Пример описания для меню. Состав и размер порции будут добавлены в окончательном меню."
+    }
+  },
+  {
+    "id": "placeholder-green-salad",
+    "categoryId": "salads",
+    "title": {
+      "ka": "მწვანე სალათი",
+      "en": "Green salad",
+      "ru": "Зелёный салат"
+    },
+    "kind": "food",
+    "isPopular": false,
+    "placeIds": ["leonidze", "kazbegi"],
+    "description": {
+      "ka": "მწვანე სალათი. მენიუს ნიმუშის აღწერა. საბოლოო მენიუში დაემატება ინგრედიენტებისა და პორციის დეტალები.",
+      "en": "Green salad. A sample menu description. Ingredients and portion details will be added with the final menu.",
+      "ru": "Зелёный салат. Пример описания для меню. Состав и размер порции будут добавлены в окончательном меню."
+    }
+  },
+  {
+    "id": "placeholder-kharcho",
+    "categoryId": "soups",
+    "title": {
+      "ka": "ხარჩო",
+      "en": "Kharcho",
+      "ru": "Харчо"
+    },
+    "kind": "food",
+    "isPopular": false,
+    "placeIds": ["kazbegi"],
+    "description": {
+      "ka": "ხარჩო. მენიუს ნიმუშის აღწერა. საბოლოო მენიუში დაემატება ინგრედიენტებისა და პორციის დეტალები.",
+      "en": "Kharcho. A sample menu description. Ingredients and portion details will be added with the final menu.",
+      "ru": "Харчо. Пример описания для меню. Состав и размер порции будут добавлены в окончательном меню."
+    }
+  },
+  {
+    "id": "placeholder-chikhirtma",
+    "categoryId": "soups",
+    "title": {
+      "ka": "ჩიხირთმა",
+      "en": "Chikhirtma",
+      "ru": "Чихиртма"
+    },
+    "kind": "food",
+    "isPopular": false,
+    "placeIds": ["baratashvili", "gorgasali"],
+    "description": {
+      "ka": "ჩიხირთმა. მენიუს ნიმუშის აღწერა. საბოლოო მენიუში დაემატება ინგრედიენტებისა და პორციის დეტალები.",
+      "en": "Chikhirtma. A sample menu description. Ingredients and portion details will be added with the final menu.",
+      "ru": "Чихиртма. Пример описания для меню. Состав и размер порции будут добавлены в окончательном меню."
+    }
+  },
+  {
+    "id": "placeholder-mushroom-soup",
+    "categoryId": "soups",
+    "title": {
+      "ka": "სოკოს სუპი",
+      "en": "Mushroom soup",
+      "ru": "Грибной суп"
+    },
+    "kind": "food",
+    "isPopular": false,
+    "placeIds": ["gorgasali", "dolidze"],
+    "description": {
+      "ka": "სოკოს სუპი. მენიუს ნიმუშის აღწერა. საბოლოო მენიუში დაემატება ინგრედიენტებისა და პორციის დეტალები.",
+      "en": "Mushroom soup. A sample menu description. Ingredients and portion details will be added with the final menu.",
+      "ru": "Грибной суп. Пример описания для меню. Состав и размер порции будут добавлены в окончательном меню."
+    }
+  },
+  {
+    "id": "placeholder-chicken-mtsvadi",
+    "categoryId": "grill",
+    "title": {
+      "ka": "ქათმის მწვადი",
+      "en": "Chicken mtsvadi",
+      "ru": "Куриный шашлык"
+    },
+    "kind": "food",
+    "isPopular": false,
+    "placeIds": ["dolidze"],
+    "description": {
+      "ka": "ქათმის მწვადი. მენიუს ნიმუშის აღწერა. საბოლოო მენიუში დაემატება ინგრედიენტებისა და პორციის დეტალები.",
+      "en": "Chicken mtsvadi. A sample menu description. Ingredients and portion details will be added with the final menu.",
+      "ru": "Куриный шашлык. Пример описания для меню. Состав и размер порции будут добавлены в окончательном меню."
+    }
+  },
+  {
+    "id": "placeholder-veal-mtsvadi",
+    "categoryId": "grill",
+    "title": {
+      "ka": "ხბოს მწვადი",
+      "en": "Veal mtsvadi",
+      "ru": "Шашлык из телятины"
+    },
+    "kind": "food",
+    "isPopular": false,
+    "placeIds": ["leonidze", "kazbegi"],
+    "description": {
+      "ka": "ხბოს მწვადი. მენიუს ნიმუშის აღწერა. საბოლოო მენიუში დაემატება ინგრედიენტებისა და პორციის დეტალები.",
+      "en": "Veal mtsvadi. A sample menu description. Ingredients and portion details will be added with the final menu.",
+      "ru": "Шашлык из телятины. Пример описания для меню. Состав и размер порции будут добавлены в окончательном меню."
+    }
+  },
+  {
+    "id": "placeholder-kebab",
+    "categoryId": "grill",
+    "title": {
+      "ka": "ქაბაბი",
+      "en": "Kebab",
+      "ru": "Кебаб"
+    },
+    "kind": "food",
+    "isPopular": false,
+    "placeIds": ["kazbegi", "baratashvili"],
+    "description": {
+      "ka": "ქაბაბი. მენიუს ნიმუშის აღწერა. საბოლოო მენიუში დაემატება ინგრედიენტებისა და პორციის დეტალები.",
+      "en": "Kebab. A sample menu description. Ingredients and portion details will be added with the final menu.",
+      "ru": "Кебаб. Пример описания для меню. Состав и размер порции будут добавлены в окончательном меню."
+    }
+  },
+  {
+    "id": "placeholder-ojakhuri",
+    "categoryId": "hot-dishes",
+    "title": {
+      "ka": "ოჯახური",
+      "en": "Ojakhuri",
+      "ru": "Оджахури"
+    },
+    "kind": "food",
+    "isPopular": true,
+    "placeIds": ["dolidze", "leonidze", "kazbegi", "baratashvili", "gorgasali"],
+    "description": {
+      "ka": "ოჯახური. მენიუს ნიმუშის აღწერა. საბოლოო მენიუში დაემატება ინგრედიენტებისა და პორციის დეტალები.",
+      "en": "Ojakhuri. A sample menu description. Ingredients and portion details will be added with the final menu.",
+      "ru": "Оджахури. Пример описания для меню. Состав и размер порции будут добавлены в окончательном меню."
+    }
+  },
+  {
+    "id": "placeholder-shkmeruli",
+    "categoryId": "hot-dishes",
+    "title": {
+      "ka": "შქმერული",
+      "en": "Shkmeruli",
+      "ru": "Шкмерули"
+    },
+    "kind": "food",
+    "isPopular": false,
+    "placeIds": ["gorgasali", "dolidze"],
+    "description": {
+      "ka": "შქმერული. მენიუს ნიმუშის აღწერა. საბოლოო მენიუში დაემატება ინგრედიენტებისა და პორციის დეტალები.",
+      "en": "Shkmeruli. A sample menu description. Ingredients and portion details will be added with the final menu.",
+      "ru": "Шкмерули. Пример описания для меню. Состав и размер порции будут добавлены в окончательном меню."
+    }
+  },
+  {
+    "id": "placeholder-mushroom-cheese",
+    "categoryId": "hot-dishes",
+    "title": {
+      "ka": "სოკო სულგუნით",
+      "en": "Mushrooms with sulguni",
+      "ru": "Грибы с сулугуни"
+    },
+    "kind": "food",
+    "isPopular": false,
+    "placeIds": ["dolidze", "leonidze"],
+    "description": {
+      "ka": "სოკო სულგუნით. მენიუს ნიმუშის აღწერა. საბოლოო მენიუში დაემატება ინგრედიენტებისა და პორციის დეტალები.",
+      "en": "Mushrooms with sulguni. A sample menu description. Ingredients and portion details will be added with the final menu.",
+      "ru": "Грибы с сулугуни. Пример описания для меню. Состав и размер порции будут добавлены в окончательном меню."
+    }
+  },
+  {
+    "id": "placeholder-mountain-khinkali",
+    "categoryId": "khinkali",
+    "title": {
+      "ka": "ხინკალი მთიულური",
+      "en": "Mountain-style khinkali",
+      "ru": "Хинкали по-горски"
+    },
+    "kind": "food",
+    "isPopular": false,
+    "placeIds": ["leonidze"],
+    "description": {
+      "ka": "ხინკალი მთიულური. მენიუს ნიმუშის აღწერა. საბოლოო მენიუში დაემატება ინგრედიენტებისა და პორციის დეტალები.",
+      "en": "Mountain-style khinkali. A sample menu description. Ingredients and portion details will be added with the final menu.",
+      "ru": "Хинкали по-горски. Пример описания для меню. Состав и размер порции будут добавлены в окончательном меню."
+    }
+  },
+  {
+    "id": "placeholder-mushroom-khinkali",
+    "categoryId": "khinkali",
+    "title": {
+      "ka": "ხინკალი სოკოთი",
+      "en": "Mushroom khinkali",
+      "ru": "Хинкали с грибами"
+    },
+    "kind": "food",
+    "isPopular": false,
+    "placeIds": ["kazbegi", "baratashvili"],
+    "description": {
+      "ka": "ხინკალი სოკოთი. მენიუს ნიმუშის აღწერა. საბოლოო მენიუში დაემატება ინგრედიენტებისა და პორციის დეტალები.",
+      "en": "Mushroom khinkali. A sample menu description. Ingredients and portion details will be added with the final menu.",
+      "ru": "Хинкали с грибами. Пример описания для меню. Состав и размер порции будут добавлены в окончательном меню."
+    }
+  },
+  {
+    "id": "placeholder-cheese-khinkali",
+    "categoryId": "khinkali",
+    "title": {
+      "ka": "ხინკალი ყველით",
+      "en": "Cheese khinkali",
+      "ru": "Хинкали с сыром"
+    },
+    "kind": "food",
+    "isPopular": false,
+    "placeIds": ["baratashvili", "gorgasali"],
+    "description": {
+      "ka": "ხინკალი ყველით. მენიუს ნიმუშის აღწერა. საბოლოო მენიუში დაემატება ინგრედიენტებისა და პორციის დეტალები.",
+      "en": "Cheese khinkali. A sample menu description. Ingredients and portion details will be added with the final menu.",
+      "ru": "Хинкали с сыром. Пример описания для меню. Состав и размер порции будут добавлены в окончательном меню."
+    }
+  },
+  {
+    "id": "placeholder-adjarian-khachapuri",
+    "categoryId": "bakery",
+    "title": {
+      "ka": "ხაჭაპური აჭარული",
+      "en": "Adjarian khachapuri",
+      "ru": "Хачапури по-аджарски"
+    },
+    "kind": "food",
+    "isPopular": true,
+    "placeIds": ["dolidze", "leonidze", "kazbegi", "baratashvili", "gorgasali"],
+    "description": {
+      "ka": "ხაჭაპური აჭარული. მენიუს ნიმუშის აღწერა. საბოლოო მენიუში დაემატება ინგრედიენტებისა და პორციის დეტალები.",
+      "en": "Adjarian khachapuri. A sample menu description. Ingredients and portion details will be added with the final menu.",
+      "ru": "Хачапури по-аджарски. Пример описания для меню. Состав и размер порции будут добавлены в окончательном меню."
+    }
+  },
+  {
+    "id": "placeholder-megruli-khachapuri",
+    "categoryId": "bakery",
+    "title": {
+      "ka": "ხაჭაპური მეგრული",
+      "en": "Megrelian khachapuri",
+      "ru": "Хачапури по-мегрельски"
+    },
+    "kind": "food",
+    "isPopular": false,
+    "placeIds": ["dolidze", "leonidze"],
+    "description": {
+      "ka": "ხაჭაპური მეგრული. მენიუს ნიმუშის აღწერა. საბოლოო მენიუში დაემატება ინგრედიენტებისა და პორციის დეტალები.",
+      "en": "Megrelian khachapuri. A sample menu description. Ingredients and portion details will be added with the final menu.",
+      "ru": "Хачапури по-мегрельски. Пример описания для меню. Состав и размер порции будут добавлены в окончательном меню."
+    }
+  },
+  {
+    "id": "placeholder-lobiani",
+    "categoryId": "bakery",
+    "title": {
+      "ka": "ლობიანი",
+      "en": "Lobiani",
+      "ru": "Лобиани"
+    },
+    "kind": "food",
+    "isPopular": false,
+    "placeIds": ["leonidze", "kazbegi"],
+    "description": {
+      "ka": "ლობიანი. მენიუს ნიმუშის აღწერა. საბოლოო მენიუში დაემატება ინგრედიენტებისა და პორციის დეტალები.",
+      "en": "Lobiani. A sample menu description. Ingredients and portion details will be added with the final menu.",
+      "ru": "Лобиани. Пример описания для меню. Состав и размер порции будут добавлены в окончательном меню."
+    }
+  },
+  {
+    "id": "placeholder-mchadi",
+    "categoryId": "bakery",
+    "title": {
+      "ka": "მჭადი",
+      "en": "Mchadi",
+      "ru": "Мчади"
+    },
+    "kind": "food",
+    "isPopular": false,
+    "placeIds": ["kazbegi"],
+    "description": {
+      "ka": "მჭადი. მენიუს ნიმუშის აღწერა. საბოლოო მენიუში დაემატება ინგრედიენტებისა და პორციის დეტალები.",
+      "en": "Mchadi. A sample menu description. Ingredients and portion details will be added with the final menu.",
+      "ru": "Мчади. Пример описания для меню. Состав и размер порции будут добавлены в окончательном меню."
+    }
+  },
+  {
+    "id": "placeholder-fries",
+    "categoryId": "beer-snacks",
+    "title": {
+      "ka": "კარტოფილი ფრი",
+      "en": "French fries",
+      "ru": "Картофель фри"
+    },
+    "kind": "food",
+    "isPopular": false,
+    "placeIds": ["baratashvili", "gorgasali"],
+    "description": {
+      "ka": "კარტოფილი ფრი. მენიუს ნიმუშის აღწერა. საბოლოო მენიუში დაემატება ინგრედიენტებისა და პორციის დეტალები.",
+      "en": "French fries. A sample menu description. Ingredients and portion details will be added with the final menu.",
+      "ru": "Картофель фри. Пример описания для меню. Состав и размер порции будут добавлены в окончательном меню."
+    }
+  },
+  {
+    "id": "placeholder-croutons",
+    "categoryId": "beer-snacks",
+    "title": {
+      "ka": "ნიორიანი პურის ჩხირები",
+      "en": "Garlic bread sticks",
+      "ru": "Чесночные гренки"
+    },
+    "kind": "food",
+    "isPopular": false,
+    "placeIds": ["gorgasali", "dolidze"],
+    "description": {
+      "ka": "ნიორიანი პურის ჩხირები. მენიუს ნიმუშის აღწერა. საბოლოო მენიუში დაემატება ინგრედიენტებისა და პორციის დეტალები.",
+      "en": "Garlic bread sticks. A sample menu description. Ingredients and portion details will be added with the final menu.",
+      "ru": "Чесночные гренки. Пример описания для меню. Состав и размер порции будут добавлены в окончательном меню."
+    }
+  },
+  {
+    "id": "placeholder-tkemali",
+    "categoryId": "sauces",
+    "title": {
+      "ka": "ტყემალი",
+      "en": "Tkemali",
+      "ru": "Ткемали"
+    },
+    "kind": "food",
+    "isPopular": false,
+    "placeIds": [],
+    "description": {
+      "ka": "ტყემალი. მენიუს ნიმუშის აღწერა. საბოლოო მენიუში დაემატება ინგრედიენტებისა და პორციის დეტალები.",
+      "en": "Tkemali. A sample menu description. Ingredients and portion details will be added with the final menu.",
+      "ru": "Ткемали. Пример описания для меню. Состав и размер порции будут добавлены в окончательном меню."
+    }
+  },
+  {
+    "id": "placeholder-satsebeli",
+    "categoryId": "sauces",
+    "title": {
+      "ka": "საწებელი",
+      "en": "Satsebeli",
+      "ru": "Сацебели"
+    },
+    "kind": "food",
+    "isPopular": false,
+    "placeIds": [],
+    "description": {
+      "ka": "საწებელი. მენიუს ნიმუშის აღწერა. საბოლოო მენიუში დაემატება ინგრედიენტებისა და პორციის დეტალები.",
+      "en": "Satsebeli. A sample menu description. Ingredients and portion details will be added with the final menu.",
+      "ru": "Сацебели. Пример описания для меню. Состав и размер порции будут добавлены в окончательном меню."
+    }
+  },
+  {
+    "id": "placeholder-churchkhela",
+    "categoryId": "desserts",
+    "title": {
+      "ka": "ჩურჩხელა",
+      "en": "Churchkhela",
+      "ru": "Чурчхела"
+    },
+    "kind": "food",
+    "isPopular": false,
+    "placeIds": ["kazbegi", "baratashvili"],
+    "description": {
+      "ka": "ჩურჩხელა. მენიუს ნიმუშის აღწერა. საბოლოო მენიუში დაემატება ინგრედიენტებისა და პორციის დეტალები.",
+      "en": "Churchkhela. A sample menu description. Ingredients and portion details will be added with the final menu.",
+      "ru": "Чурчхела. Пример описания для меню. Состав и размер порции будут добавлены в окончательном меню."
+    }
+  },
+  {
+    "id": "placeholder-cake",
+    "categoryId": "desserts",
+    "title": {
+      "ka": "შოკოლადის ტორტი",
+      "en": "Chocolate cake",
+      "ru": "Шоколадный торт"
+    },
+    "kind": "food",
+    "isPopular": false,
+    "placeIds": ["baratashvili"],
+    "description": {
+      "ka": "შოკოლადის ტორტი. მენიუს ნიმუშის აღწერა. საბოლოო მენიუში დაემატება ინგრედიენტებისა და პორციის დეტალები.",
+      "en": "Chocolate cake. A sample menu description. Ingredients and portion details will be added with the final menu.",
+      "ru": "Шоколадный торт. Пример описания для меню. Состав и размер порции будут добавлены в окончательном меню."
+    }
+  },
+  {
+    "id": "placeholder-ice-cream",
+    "categoryId": "desserts",
+    "title": {
+      "ka": "ნაყინი",
+      "en": "Ice cream",
+      "ru": "Мороженое"
+    },
+    "kind": "food",
+    "isPopular": false,
+    "placeIds": ["gorgasali", "dolidze"],
+    "description": {
+      "ka": "ნაყინი. მენიუს ნიმუშის აღწერა. საბოლოო მენიუში დაემატება ინგრედიენტებისა და პორციის დეტალები.",
+      "en": "Ice cream. A sample menu description. Ingredients and portion details will be added with the final menu.",
+      "ru": "Мороженое. Пример описания для меню. Состав и размер порции будут добавлены в окончательном меню."
+    }
+  },
+  {
+    "id": "placeholder-mineral-water",
+    "categoryId": "soft-drinks",
+    "title": {
+      "ka": "მინერალური წყალი",
+      "en": "Mineral water",
+      "ru": "Минеральная вода"
+    },
+    "kind": "beverage",
+    "isPopular": false,
+    "placeIds": ["dolidze", "leonidze"],
+    "description": {
+      "ka": "მინერალური წყალი. მენიუს ნიმუშის აღწერა. საბოლოო მენიუში დაემატება ინგრედიენტებისა და პორციის დეტალები.",
+      "en": "Mineral water. A sample menu description. Ingredients and portion details will be added with the final menu.",
+      "ru": "Минеральная вода. Пример описания для меню. Состав и размер порции будут добавлены в окончательном меню."
+    }
+  },
+  {
+    "id": "placeholder-juice",
+    "categoryId": "soft-drinks",
+    "title": {
+      "ka": "ვაშლის წვენი",
+      "en": "Apple juice",
+      "ru": "Яблочный сок"
+    },
+    "kind": "beverage",
+    "isPopular": false,
+    "placeIds": ["leonidze"],
+    "description": {
+      "ka": "ვაშლის წვენი. მენიუს ნიმუშის აღწერა. საბოლოო მენიუში დაემატება ინგრედიენტებისა და პორციის დეტალები.",
+      "en": "Apple juice. A sample menu description. Ingredients and portion details will be added with the final menu.",
+      "ru": "Яблочный сок. Пример описания для меню. Состав и размер порции будут добавлены в окончательном меню."
+    }
+  },
+  {
+    "id": "placeholder-coffee",
+    "categoryId": "hot-drinks",
+    "title": {
+      "ka": "ყავა",
+      "en": "Coffee",
+      "ru": "Кофе"
+    },
+    "kind": "beverage",
+    "isPopular": false,
+    "placeIds": ["kazbegi", "baratashvili"],
+    "description": {
+      "ka": "ყავა. მენიუს ნიმუშის აღწერა. საბოლოო მენიუში დაემატება ინგრედიენტებისა და პორციის დეტალები.",
+      "en": "Coffee. A sample menu description. Ingredients and portion details will be added with the final menu.",
+      "ru": "Кофе. Пример описания для меню. Состав и размер порции будут добавлены в окончательном меню."
+    }
+  },
+  {
+    "id": "placeholder-tea",
+    "categoryId": "hot-drinks",
+    "title": {
+      "ka": "ჩაი",
+      "en": "Tea",
+      "ru": "Чай"
+    },
+    "kind": "beverage",
+    "isPopular": false,
+    "placeIds": ["baratashvili", "gorgasali"],
+    "description": {
+      "ka": "ჩაი. მენიუს ნიმუშის აღწერა. საბოლოო მენიუში დაემატება ინგრედიენტებისა და პორციის დეტალები.",
+      "en": "Tea. A sample menu description. Ingredients and portion details will be added with the final menu.",
+      "ru": "Чай. Пример описания для меню. Состав и размер порции будут добавлены в окончательном меню."
+    }
+  },
+  {
+    "id": "placeholder-beer",
+    "categoryId": "beer",
+    "title": {
+      "ka": "ქართული ლუდი",
+      "en": "Georgian beer",
+      "ru": "Грузинское пиво"
+    },
+    "kind": "beverage",
+    "isPopular": false,
+    "placeIds": ["gorgasali"],
+    "description": {
+      "ka": "ქართული ლუდი. მენიუს ნიმუშის აღწერა. საბოლოო მენიუში დაემატება ინგრედიენტებისა და პორციის დეტალები.",
+      "en": "Georgian beer. A sample menu description. Ingredients and portion details will be added with the final menu.",
+      "ru": "Грузинское пиво. Пример описания для меню. Состав и размер порции будут добавлены в окончательном меню."
+    }
+  },
+  {
+    "id": "placeholder-shumi",
+    "categoryId": "shumi-wine",
+    "title": {
+      "ka": "შუმი საფერავი",
+      "en": "Shumi Saperavi",
+      "ru": "Шуми Саперави"
+    },
+    "kind": "beverage",
+    "isPopular": false,
+    "placeIds": ["dolidze", "leonidze"],
+    "description": {
+      "ka": "შუმი საფერავი. მენიუს ნიმუშის აღწერა. საბოლოო მენიუში დაემატება ინგრედიენტებისა და პორციის დეტალები.",
+      "en": "Shumi Saperavi. A sample menu description. Ingredients and portion details will be added with the final menu.",
+      "ru": "Шуми Саперави. Пример описания для меню. Состав и размер порции будут добавлены в окончательном меню."
+    }
+  },
+  {
+    "id": "placeholder-matrobela",
+    "categoryId": "matrobela-wine",
+    "title": {
+      "ka": "მათრობელა წინანდალი",
+      "en": "Matrobela Tsinandali",
+      "ru": "Матробела Цинандали"
+    },
+    "kind": "beverage",
+    "isPopular": false,
+    "placeIds": [],
+    "description": {
+      "ka": "მათრობელა წინანდალი. მენიუს ნიმუშის აღწერა. საბოლოო მენიუში დაემატება ინგრედიენტებისა და პორციის დეტალები.",
+      "en": "Matrobela Tsinandali. A sample menu description. Ingredients and portion details will be added with the final menu.",
+      "ru": "Матробела Цинандали. Пример описания для меню. Состав и размер порции будут добавлены в окончательном меню."
+    }
+  },
+  {
+    "id": "placeholder-chacha",
+    "categoryId": "vodka-chacha",
+    "title": {
+      "ka": "ჭაჭა",
+      "en": "Chacha",
+      "ru": "Чача"
+    },
+    "kind": "beverage",
+    "isPopular": false,
+    "placeIds": ["kazbegi"],
+    "description": {
+      "ka": "ჭაჭა. მენიუს ნიმუშის აღწერა. საბოლოო მენიუში დაემატება ინგრედიენტებისა და პორციის დეტალები.",
+      "en": "Chacha. A sample menu description. Ingredients and portion details will be added with the final menu.",
+      "ru": "Чача. Пример описания для меню. Состав и размер порции будут добавлены в окончательном меню."
+    }
+  },
+  {
+    "id": "placeholder-brandy",
+    "categoryId": "spirits",
+    "title": {
+      "ka": "ქართული ბრენდი",
+      "en": "Georgian brandy",
+      "ru": "Грузинский бренди"
+    },
+    "kind": "beverage",
+    "isPopular": false,
+    "placeIds": ["baratashvili", "gorgasali"],
+    "description": {
+      "ka": "ქართული ბრენდი. მენიუს ნიმუშის აღწერა. საბოლოო მენიუში დაემატება ინგრედიენტებისა და პორციის დეტალები.",
+      "en": "Georgian brandy. A sample menu description. Ingredients and portion details will be added with the final menu.",
+      "ru": "Грузинский бренди. Пример описания для меню. Состав и размер порции будут добавлены в окончательном меню."
+    }
+  },
+  {
+    "id": "placeholder-villa-white",
+    "categoryId": "villa-mosavali",
+    "title": {
+      "ka": "ვილა მოსავალი თეთრი",
+      "en": "Villa Mosavali white",
+      "ru": "Вилла Мосавали белое"
+    },
+    "kind": "beverage",
+    "isPopular": false,
+    "placeIds": ["gorgasali", "dolidze"],
+    "description": {
+      "ka": "ვილა მოსავალი თეთრი. მენიუს ნიმუშის აღწერა. საბოლოო მენიუში დაემატება ინგრედიენტებისა და პორციის დეტალები.",
+      "en": "Villa Mosavali white. A sample menu description. Ingredients and portion details will be added with the final menu.",
+      "ru": "Вилла Мосавали белое. Пример описания для меню. Состав и размер порции будут добавлены в окончательном меню."
+    }
+  },
+  {
+    "id": "placeholder-villa-red",
+    "categoryId": "villa-mosavali",
+    "title": {
+      "ka": "ვილა მოსავალი წითელი",
+      "en": "Villa Mosavali red",
+      "ru": "Вилла Мосавали красное"
+    },
+    "kind": "beverage",
+    "isPopular": false,
+    "placeIds": ["dolidze"],
+    "description": {
+      "ka": "ვილა მოსავალი წითელი. მენიუს ნიმუშის აღწერა. საბოლოო მენიუში დაემატება ინგრედიენტებისა და პორციის დეტალები.",
+      "en": "Villa Mosavali red. A sample menu description. Ingredients and portion details will be added with the final menu.",
+      "ru": "Вилла Мосавали красное. Пример описания для меню. Состав и размер порции будут добавлены в окончательном меню."
+    }
+  }
+]

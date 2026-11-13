@@ -1,0 +1,11 @@
+/* photograph contrast stays independent of the page theme and slide content. */
+.place-gallery-overlay {
+  color: var(--image-foreground);
+  background: linear-gradient(
+    to top,
+    color-mix(in oklch, var(--image-overlay) 90%, transparent) 0%,
+    color-mix(in oklch, var(--image-overlay) 70%, transparent) 35%,
+    color-mix(in oklch, var(--image-overlay) 25%, transparent) 70%,
+    transparent 100%
+  );
+}

@@ -1,0 +1,40 @@
+.product-dialog {
+  animation: none;
+  opacity: 1;
+  translate: -50% -50%;
+  filter: blur(0);
+  transition:
+    translate 220ms ease-out,
+    opacity 220ms ease-out,
+    filter 220ms ease-out;
+}
+
+.product-dialog[data-starting-style],
+.product-dialog[data-ending-style] {
+  opacity: 0;
+  translate: -50% calc(-50% + 1rem);
+  filter: blur(2px);
+}
+
+.product-dialog-backdrop {
+  animation: none;
+  opacity: 1;
+  background: var(--dialog-backdrop);
+  backdrop-filter: blur(6px);
+  transition:
+    opacity 220ms ease-out,
+    backdrop-filter 220ms ease-out;
+}
+
+.product-dialog-backdrop[data-starting-style],
+.product-dialog-backdrop[data-ending-style] {
+  opacity: 0;
+  backdrop-filter: blur(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .product-dialog,
+  .product-dialog-backdrop {
+    transition-duration: 0ms;
+  }
+}
