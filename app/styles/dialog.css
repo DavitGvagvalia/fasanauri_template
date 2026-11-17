@@ -4,9 +4,9 @@
   translate: -50% -50%;
   filter: blur(0);
   transition:
-    translate 220ms ease-out,
-    opacity 220ms ease-out,
-    filter 220ms ease-out;
+    translate var(--drawer-motion-duration) var(--drawer-motion-easing),
+    opacity var(--drawer-motion-duration) var(--drawer-motion-easing),
+    filter var(--drawer-motion-duration) var(--drawer-motion-easing);
 }
 
 .product-dialog[data-starting-style],
@@ -22,14 +22,37 @@
   background: var(--dialog-backdrop);
   backdrop-filter: blur(6px);
   transition:
-    opacity 220ms ease-out,
-    backdrop-filter 220ms ease-out;
+    opacity var(--drawer-motion-duration) var(--drawer-motion-easing),
+    backdrop-filter var(--drawer-motion-duration) var(--drawer-motion-easing);
 }
 
 .product-dialog-backdrop[data-starting-style],
 .product-dialog-backdrop[data-ending-style] {
   opacity: 0;
   backdrop-filter: blur(0);
+}
+
+/* preserves one accessible dialog while narrow screens use a bottom drawer. */
+@media (max-width: 639px) {
+  .product-dialog {
+    top: auto;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    max-width: none;
+    height: 90dvh;
+    max-height: 90dvh;
+    translate: 0 0;
+    border-bottom: 0;
+    border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+
+  .product-dialog[data-starting-style],
+  .product-dialog[data-ending-style] {
+    translate: 0 100%;
+    filter: none;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {

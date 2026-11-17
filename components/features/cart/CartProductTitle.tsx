@@ -23,7 +23,7 @@ const CartProductTitle = ({ line }: IProps): ReactElement => {
       type="button"
       onClick={showProduct}
       aria-haspopup="dialog"
-      className="link-underline cursor-pointer rounded-sm text-left text-sm leading-5 font-medium outline-none focus-visible:ring-3 focus-visible:ring-ring sm:leading-6"
+      className="cursor-pointer rounded-sm text-left text-sm leading-5 font-medium outline-none focus-visible:ring-3 focus-visible:ring-ring sm:leading-6"
     >
       {line.product.title[locale]}
     </button>

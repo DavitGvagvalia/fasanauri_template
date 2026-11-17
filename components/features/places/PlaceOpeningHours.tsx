@@ -20,11 +20,11 @@ const PlaceOpeningHours = (): ReactElement => {
           />
           {t("hours")}
         </h2>
-        <dl className="space-y-5 text-sm sm:text-base">
+        <dl className="w-fit space-y-5 text-sm sm:text-base">
           {WEEK_DAYS.map((day) => (
             <div
               key={day}
-              className="flex justify-between gap-6 text-muted-foreground"
+              className="grid grid-cols-[minmax(0,1fr)_auto] gap-8 text-muted-foreground"
             >
               <dt>{t(day)}</dt>
               <dd className="shrink-0 tabular-nums">{t("hoursValue")}</dd>

@@ -44,3 +44,14 @@ test("checkout enforces trimmed name boundaries and rejects missing or oversized
     assert.equal(checkoutSchema.safeParse({ ...details, address }).success, false)
   }
 })
+
+test("checkout notes are optional, trimmed, and bounded", () => {
+  assert.equal(checkoutSchema.parse(details).note, undefined)
+  assert.equal(
+    checkoutSchema.parse({ ...details, note: "  No cutlery please  " }).note,
+    "No cutlery please"
+  )
+  assert.equal(checkoutSchema.safeParse({ ...details, note: "a".repeat(500) }).success, true)
+  assert.equal(checkoutSchema.safeParse({ ...details, note: "a".repeat(501) }).success, false)
+  assert.equal(checkoutSchema.safeParse({ ...details, note: 12 }).success, false)
+})

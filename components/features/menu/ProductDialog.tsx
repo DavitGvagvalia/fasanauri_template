@@ -5,6 +5,8 @@ import type { ReactElement } from "react"
 import { useState } from "react"
 import { useLocale, useTranslations } from "next-intl"
 
+import { SHOW_SHARE_BUTTON } from "@/constants"
+import CtaPattern from "@/components/shared/CtaPattern"
 import BeverageServing from "@/components/features/menu/BeverageServing"
 import QuantityControl from "@/components/shared/QuantityControl"
 import ImageViewer from "@/components/shared/ImageViewer"
@@ -13,7 +15,10 @@ import ProductShare from "@/components/features/menu/ProductShare"
 import ProductDialogClose from "@/components/features/menu/ProductDialogClose"
 import { Button } from "@/components/ui/button"
 import { DialogContent, DialogDescription, DialogHeader, DialogTitle } from "@/components/ui/dialog"
+import { useCart } from "@/hooks/useCart"
 import { useAddToCart } from "@/hooks/useAddToCart"
+import { getProductOrderAction } from "@/lib/cart/getProductOrderAction"
+import { formatPrice } from "@/lib/formatPrice"
 import QuantityPrice from "@/components/shared/QuantityPrice"
 import type { IProduct, TServing } from "@/types/menu"
 
@@ -28,14 +33,32 @@ const ProductDialog = ({ product, onAdded, initialServing = "bottle" }: IProps):
   const t = useTranslations("Menu")
   const common = useTranslations("Common")
   const { add, ready } = useAddToCart()
-  const [quantity, setQuantity] = useState(1)
+  const lines = useCart((state) => state.lines)
   const [serving, setServing] = useState<TServing>(initialServing)
+  const [quantity, setQuantity] = useState(
+    lines.find(
+      (line) =>
+        line.product.id === product.id &&
+        line.serving === (product.kind === "beverage" ? initialServing : null)
+    )?.quantity ?? 1
+  )
+
+  const selectedServing = product.kind === "beverage" ? serving : null
+  const existing = lines.find(
+    (line) => line.product.id === product.id && line.serving === selectedServing
+  )
+  const action = getProductOrderAction(quantity, existing?.quantity)
+
+  const changeServing = (value: TServing): void => {
+    setServing(value)
+    setQuantity(
+      lines.find((line) => line.product.id === product.id && line.serving === value)?.quantity ?? 1
+    )
+  }
 
   const addToCart = (): void => {
-    add(product, quantity, product.kind === "beverage" ? serving : null)
+    add(product, quantity, selectedServing)
     onAdded()
-    setQuantity(1)
-    setServing(initialServing)
   }
 
   return (
@@ -62,42 +85,49 @@ const ProductDialog = ({ product, onAdded, initialServing = "bottle" }: IProps):
             {t("placeholder")}
           </span>
         </ImageViewer>
-        <div className="min-h-0 space-y-4 overflow-y-auto p-4 sm:p-6">
+        <div className="min-h-0 flex-1 space-y-4 overflow-y-auto p-4 sm:p-6">
           <DialogHeader>
-            <DialogTitle className="pr-2 text-xl leading-7">{product.title[locale]}</DialogTitle>
+            <DialogTitle className="pr-2 text-xl leading-7 font-bold">
+              {product.title[locale]}
+            </DialogTitle>
+            <p className="text-sm font-medium">
+              {t("unitPrice", { price: formatPrice(product.priceMinor, locale) })}
+            </p>
             <DialogDescription className="text-sm leading-6 text-muted-foreground">
               {product.description?.[locale] || t("descriptionFallback")}
             </DialogDescription>
           </DialogHeader>
-          <p className="text-lg font-semibold tabular-nums">
-            <QuantityPrice
-              priceMinor={product.priceMinor}
-              quantity={quantity}
-            />
-          </p>
           {product.kind === "beverage" && (
             <BeverageServing
               serving={serving}
-              onChange={setServing}
+              onChange={changeServing}
             />
           )}
         </div>
         <div className="flex shrink-0 flex-wrap items-center gap-3 border-t bg-popover p-4 sm:p-6">
           <QuantityControl
             quantity={quantity}
+            minimum={0}
             onChange={setQuantity}
             label={common("quantity")}
           />
           <Button
             onClick={addToCart}
-            disabled={!ready}
-            className="h-11 flex-1"
+            disabled={!ready || (quantity === 0 && !existing)}
+            className="relative isolate min-h-11 h-auto flex-1 flex-wrap gap-x-2 gap-y-0 overflow-hidden px-3 py-2 font-semibold whitespace-normal"
           >
-            {t("addToCart")}
+            <CtaPattern />
+            {t(action)}
+            {quantity > 0 && (
+              <QuantityPrice
+                priceMinor={product.priceMinor}
+                quantity={quantity}
+              />
+            )}
           </Button>
         </div>
       </div>
-      <ProductShare product={product} />
+      {SHOW_SHARE_BUTTON && <ProductShare product={product} />}
     </DialogContent>
   )
 }

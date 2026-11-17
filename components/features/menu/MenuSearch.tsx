@@ -15,7 +15,7 @@ const MenuSearch = (): ReactElement => {
     <form
       role="search"
       onSubmit={handleSubmit}
-      className="relative mt-5 mb-2 w-[calc(100%-3rem)] max-w-md"
+      className="relative mt-2 w-full max-w-md"
     >
       <Button
         type="submit"

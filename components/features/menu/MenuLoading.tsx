@@ -13,20 +13,20 @@ const MenuLoading = (): ReactElement => {
         className="sticky top-18 z-30 w-full shrink-0 border-b bg-menu-panel/97 backdrop-blur-md"
       >
         <div className="site-container py-2">
-          <div className="pb-14 xl:pb-0">
+          <div className="mx-10 xl:mx-0">
             <div className="flex gap-1 overflow-hidden py-1">
               {Array.from({ length: 12 }, (_, index) => (
                 <div
                   key={`category-loading-${index}`}
-                  className="flex h-32 w-23 shrink-0 flex-col items-center gap-3 p-3 sm:h-40 sm:w-31"
+                  className="flex h-20 w-23 shrink-0 flex-col items-center justify-start gap-1 p-2 sm:h-32 sm:w-27 sm:gap-2"
                 >
-                  <Skeleton className="aspect-square w-full rounded-lg" />
+                  <Skeleton className="aspect-square w-7 shrink-0 rounded-lg sm:w-18" />
                   <Skeleton className="h-3 w-3/4" />
                 </div>
               ))}
             </div>
           </div>
-          <Skeleton className="mt-5 mb-2 h-10 w-[calc(100%-3rem)] max-w-md bg-background/80" />
+          <Skeleton className="mt-2 h-10 w-full max-w-md bg-background/80" />
         </div>
       </div>
       <main

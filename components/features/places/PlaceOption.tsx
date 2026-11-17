@@ -3,6 +3,7 @@
 import { Check, MapPin } from "lucide-react"
 import { useEffect, useRef } from "react"
 import { useLocale, useTranslations } from "next-intl"
+import CtaPattern from "@/components/shared/CtaPattern"
 import CardImage from "@/components/shared/CardImage"
 import { buttonVariants } from "@/components/ui/button"
 import { Link, usePathname } from "@/i18n/navigation"
@@ -47,7 +48,7 @@ const PlaceOption = ({ place, selected, query, onSelect }: IProps): ReactElement
     <div
       ref={card}
       className={cn(
-        "group/card relative overflow-hidden rounded-xl border bg-card text-card-foreground transition-colors hover:border-foreground/40 focus-within:ring-2 focus-within:ring-ring",
+        "group/card group/button relative overflow-hidden rounded-xl border bg-card text-card-foreground transition-colors hover:border-foreground/40 focus-within:ring-2 focus-within:ring-ring",
         selected && "border-primary bg-primary text-primary-foreground hover:border-primary"
       )}
     >
@@ -66,7 +67,8 @@ const PlaceOption = ({ place, selected, query, onSelect }: IProps): ReactElement
             sizes="(max-width: 639px) calc(115vw - 48px), 470px"
           />
         </div>
-        <div className="flex h-14 items-center gap-3 pr-16 pl-4">
+        <div className="relative isolate flex h-14 items-center gap-3 overflow-hidden pr-16 pl-4">
+          <CtaPattern />
           <span className="text-sm leading-none font-medium">{place.title[locale]}</span>
           {selected && (
             <Check

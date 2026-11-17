@@ -19,7 +19,7 @@ const AboutPlaceContent = async ({ place }: IProps): Promise<ReactElement> => {
         place={place}
         images={images}
       />
-      <div className="site-container grid gap-12 py-12 md:grid-cols-2 md:gap-16 md:py-20">
+      <div className="site-container max-w-[1200px] grid gap-12 py-12 md:grid-cols-2 md:gap-16 md:py-20">
         <PlaceContactDetails place={place} />
         <PlaceOpeningHours />
       </div>

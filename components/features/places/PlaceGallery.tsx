@@ -57,7 +57,7 @@ const PlaceGallery = ({ place, images }: IProps): ReactElement => {
             className="pl-0"
             aria-label={t("slideCount", { current: index + 1, total: images.length })}
           >
-            <div className="relative h-[65svh] min-h-80 max-h-192 w-full bg-muted">
+            <div className="relative h-[71.5svh] min-h-88 max-h-[52.8rem] w-full bg-muted">
               <Image
                 src={image.imageURL}
                 fill
@@ -71,7 +71,7 @@ const PlaceGallery = ({ place, images }: IProps): ReactElement => {
         ))}
       </CarouselContent>
       <div className="place-gallery-overlay pointer-events-none absolute inset-0">
-        <div className="site-container flex h-full flex-col justify-end gap-8 py-8 sm:gap-12 sm:py-12">
+        <div className="site-container max-w-[1200px] flex h-full flex-col justify-end gap-8 py-8 sm:gap-12 sm:py-12">
           <div>
             <p className="mb-3 text-sm">{t("about")}</p>
             <h1 className="max-w-3xl text-3xl leading-tight font-semibold sm:text-5xl">

@@ -2,12 +2,14 @@ import type { ReactElement } from "react"
 import { useTranslations } from "next-intl"
 
 import { Skeleton } from "@/components/ui/skeleton"
+import { cn } from "@/lib/utils"
 
 interface IProps {
   showDescription?: boolean
+  compact?: boolean
 }
 
-const CartItemsSkeleton = ({ showDescription = false }: IProps): ReactElement => {
+const CartItemsSkeleton = ({ showDescription = false, compact = false }: IProps): ReactElement => {
   const t = useTranslations("Cart")
 
   return (
@@ -20,17 +22,21 @@ const CartItemsSkeleton = ({ showDescription = false }: IProps): ReactElement =>
         <div
           key={index}
           aria-hidden
-          className="grid grid-cols-[6rem_minmax(0,1fr)] gap-3 border-b py-5 last:border-0 sm:grid-cols-[7rem_minmax(0,1fr)]"
+          className={cn(
+            "grid gap-2 border-b py-3 last:border-0",
+            compact
+              ? "grid-cols-[3.5rem_minmax(0,1fr)_auto]"
+              : "grid-cols-[4rem_minmax(0,1fr)_auto] sm:grid-cols-[5rem_minmax(0,1fr)_auto]"
+          )}
         >
-          <Skeleton className="size-24 rounded-lg sm:size-28" />
-          <div className="flex min-h-24 flex-col gap-3 sm:min-h-28">
+          <Skeleton className={cn("rounded-lg", compact ? "size-14" : "size-16 sm:size-20")} />
+          <div className={cn("flex flex-col gap-2", compact ? "min-h-14" : "min-h-16 sm:min-h-20")}>
             <Skeleton className="h-5 w-3/4" />
             {showDescription && <Skeleton className="h-10 w-full" />}
             <Skeleton className="mt-auto h-5 w-24" />
           </div>
-          <div className="col-span-2 flex justify-between">
+          <div className="flex items-center justify-end">
             <Skeleton className="h-9 w-28" />
-            <Skeleton className="size-9" />
           </div>
         </div>
       ))}

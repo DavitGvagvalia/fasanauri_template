@@ -34,7 +34,7 @@ const ProductCategorySection = ({ id, title, products, count, first }: IProps): 
       >
         {title}
         <span
-          className="relative -top-0.5 font-normal text-muted-foreground tabular-nums"
+          className="relative -top-0.5 text-sm font-normal text-muted-foreground tabular-nums"
           aria-label={t("results", { count })}
         >
           ({count})

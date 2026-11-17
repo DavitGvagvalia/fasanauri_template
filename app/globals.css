@@ -19,6 +19,8 @@
   --color-category-selected-hover: var(--category-selected-hover);
   --color-search-focus: var(--search-focus);
   --color-menu-panel: var(--menu-panel);
+  --color-confirmation: var(--confirmation);
+  --color-confirmation-foreground: var(--confirmation-foreground);
   --font-heading: var(--font-sans);
   --font-sans: var(--font-app-sans);
   --color-sidebar-ring: var(--sidebar-ring);
@@ -65,9 +67,13 @@
   --image-overlay: oklch(0 0 0);
   --image-foreground: oklch(1 0 0);
   --category-selected: var(--primary);
-  --category-selected-hover: color-mix(in oklch, var(--category-selected) 85%, var(--muted) 15%);
+  --category-selected-hover: color-mix(in oklch, var(--primary) 85%, var(--muted) 15%);
   --search-focus: oklch(0 0 0);
   --menu-panel: color-mix(in oklch, var(--background) 55%, var(--muted) 45%);
+  --confirmation: oklch(0 0 0);
+  --confirmation-foreground: oklch(1 0 0);
+  --drawer-motion-duration: 300ms;
+  --drawer-motion-easing: cubic-bezier(0.4, 0, 0.2, 1);
   --dialog-backdrop: color-mix(in oklch, var(--foreground) 18%, transparent);
   --font-app-sans: var(--font-inter), var(--font-noto-georgian), sans-serif;
   --background: oklch(1 0 0);
@@ -105,6 +111,8 @@
 }
 
 .dark {
+  --confirmation: oklch(1 0 0);
+  --confirmation-foreground: oklch(0 0 0);
   /* keeps category filters and the footer aligned with the zinc palette. */
   --menu-panel: var(--color-zinc-900);
   --search-focus: var(--foreground);
@@ -175,6 +183,29 @@ html {
   scroll-behavior: smooth;
 }
 
+.theme-changing,
+.theme-changing *,
+.theme-changing *::before,
+.theme-changing *::after {
+  transition-property: all !important;
+  transition-duration: 200ms !important;
+  transition-delay: 0ms !important;
+  transition-timing-function: ease !important;
+}
+
+/* matches the wide container gutter so arrow centers bisect the remaining screen margin. */
+@media (min-width: 1280px) {
+  .category-carousel {
+    --category-arrow-outset: calc(2.625rem + max(0px, (100vw - 115rem) / 4));
+  }
+  .category-carousel-previous {
+    left: calc(-1 * var(--category-arrow-outset));
+  }
+  .category-carousel-next {
+    right: calc(-1 * var(--category-arrow-outset));
+  }
+}
+
 .link-underline {
   text-decoration-line: underline;
   text-decoration-color: transparent;
@@ -200,7 +231,79 @@ html {
   }
 }
 
-/* matches the sheet width and preserve the toaster s original wall gutter. */
+/* reserves the measured persistent panel height and a gap below transient notifications. */
+body:has([data-slot="pending-order-notice"]) [data-sonner-toaster][data-y-position="bottom"] {
+  bottom: calc(var(--offset-bottom) + var(--order-notice-height, 128px) + 12px);
+}
+
+.order-notification-dock {
+  transition:
+    right var(--drawer-motion-duration) var(--drawer-motion-easing),
+    bottom var(--drawer-motion-duration) var(--drawer-motion-easing),
+    width var(--drawer-motion-duration) var(--drawer-motion-easing);
+}
+
+.order-sheet,
+.notice-side-sheet {
+  translate: 0 0;
+  transition: translate var(--drawer-motion-duration) var(--drawer-motion-easing);
+}
+
+.notification-slide-in {
+  animation: notification-slide-in var(--drawer-motion-duration) var(--drawer-motion-easing) both;
+}
+
+.confirmation-bell {
+  transform-origin: 50% 15%;
+  animation: confirmation-bell-ring 2.8s ease-in-out infinite;
+}
+
+@keyframes confirmation-bell-ring {
+  0%,
+  20%,
+  100% {
+    transform: rotate(0);
+  }
+  3%,
+  9% {
+    transform: rotate(-16deg);
+  }
+  6%,
+  12% {
+    transform: rotate(16deg);
+  }
+  15% {
+    transform: rotate(-8deg);
+  }
+  18% {
+    transform: rotate(8deg);
+  }
+}
+
+@keyframes notification-slide-in {
+  from {
+    transform: translateY(1.5rem);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+.order-sheet[data-starting-style],
+.order-sheet[data-ending-style],
+.notice-side-sheet[data-side="right"][data-starting-style],
+.notice-side-sheet[data-side="right"][data-ending-style] {
+  opacity: 1;
+  translate: 100% 0;
+}
+
+.notice-side-sheet[data-side="left"][data-starting-style],
+.notice-side-sheet[data-side="left"][data-ending-style] {
+  opacity: 1;
+  translate: -100% 0;
+}
+
+/* matches the sheet width and preserves the original notification gutter. */
 @media (min-width: 640px) {
   body:has([data-slot="sheet-content"][data-side="right"][data-open]) [data-sonner-toaster] {
     right: calc(28rem + 32px);
@@ -210,7 +313,65 @@ html {
     width: 100%;
   }
 }
+
+@media (max-width: 639px) {
+  .order-sheet {
+    inset: auto 0 0;
+    height: 90dvh;
+    max-height: 90dvh;
+    border-left: 0;
+    border-top: 1px solid var(--border);
+    border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+
+  .order-sheet[data-starting-style],
+  .order-sheet[data-ending-style] {
+    translate: 0 100%;
+  }
+
+  body:has([data-slot="pending-order-notice"]) [data-sonner-toaster][data-y-position="bottom"] {
+    bottom: calc(var(--mobile-offset-bottom) + var(--order-notice-height, 128px) + 12px);
+  }
+
+  .order-notification-dock[data-compact] {
+    right: 8px;
+    bottom: calc(90dvh + 6px);
+  }
+
+  body:has(.order-notification-dock[data-compact]) [data-sonner-toaster][data-y-position="bottom"] {
+    bottom: var(--mobile-offset-bottom);
+  }
+}
+
+@media (max-width: 639px) and (max-height: 600px) {
+  .compact-order-notice {
+    padding-top: 4px;
+    padding-bottom: 4px;
+  }
+  .compact-order-notice .compact-order-meta {
+    display: none;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
+  .theme-changing,
+  .theme-changing *,
+  .theme-changing *::before,
+  .theme-changing *::after {
+    transition-duration: 0ms !important;
+  }
+  .confirmation-bell {
+    animation: none;
+  }
+  .notification-slide-in {
+    animation: none;
+  }
+  .order-notification-dock,
+  .order-sheet,
+  .notice-side-sheet {
+    transition: none;
+  }
   .link-underline {
     transition: none;
   }

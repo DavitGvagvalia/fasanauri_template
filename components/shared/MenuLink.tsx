@@ -2,6 +2,7 @@
 
 import { useLocale } from "next-intl"
 import { useSelectedPlace } from "@/hooks/useSelectedPlace"
+import BrandLogo from "@/components/shared/BrandLogo"
 import { Link } from "@/i18n/navigation"
 import type { ReactElement, ReactNode } from "react"
 
@@ -19,8 +20,9 @@ const MenuLink = ({ children, className }: IProps): ReactElement => {
       href={{ pathname: "/", query: { place: place.id } }}
       className={className}
     >
+      <BrandLogo className="size-8 shrink-0 text-foreground sm:size-10" />
       <span className="flex min-w-0 flex-col">
-        <span className="flex items-center gap-2">{children}</span>
+        {children}
         <span className="truncate text-xs font-normal tracking-normal text-muted-foreground sm:hidden">
           {place.title[locale]}
         </span>

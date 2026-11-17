@@ -47,7 +47,7 @@ const CategoryCarousel = ({ categories, selected, loading, onSelect }: IProps): 
       opts={{ align: "center", dragFree: true, slidesToScroll: 1, containScroll: "trimSnaps" }}
       aria-label={t("categories")}
       aria-roledescription={t("carousel")}
-      className="mx-10 min-w-0 xl:mx-0"
+      className="category-carousel mx-10 min-w-0 xl:mx-2"
       onKeyDownCapture={carousel.handleKeyDown}
     >
       <CarouselContent className="-ml-1 touch-pan-y py-1">
@@ -63,11 +63,13 @@ const CategoryCarousel = ({ categories, selected, loading, onSelect }: IProps): 
           ? Array.from({ length: 10 }, (_, index) => (
               <CarouselItem
                 key={`category-skeleton-${index}`}
-                className="basis-24 pl-1 sm:basis-32"
+                className="basis-24 pl-1 sm:basis-28"
               >
-                <div className="flex h-32 flex-col items-center gap-3 p-3 sm:h-40">
-                  <Skeleton className="aspect-square w-full rounded-lg" />
-                  <Skeleton className="h-3 w-3/4" />
+                <div className="flex flex-col items-center justify-start gap-1 p-2">
+                  <Skeleton className="aspect-square w-full shrink-0 rounded-lg" />
+                  <div className="flex h-9 w-full items-center justify-center">
+                    <Skeleton className="h-3 w-3/4" />
+                  </div>
                 </div>
               </CarouselItem>
             ))
@@ -84,25 +86,25 @@ const CategoryCarousel = ({ categories, selected, loading, onSelect }: IProps): 
             ))}
       </CarouselContent>
       <CarouselPrevious
-        className="inset-y-0 -left-10 my-auto size-8 xl:-left-11 xl:size-7"
+        className="category-carousel-previous inset-y-0 -left-12 my-auto size-8 sm:-left-8 xl:size-7"
         aria-label={`${t("previousCategories")}, ${t("hiddenCategories", { count: carousel.left })}`}
         onClick={carousel.scrollPrev}
         disabled={!carousel.canScrollPrev}
       />
       <CarouselNext
-        className="inset-y-0 -right-10 my-auto size-8 xl:-right-11 xl:size-7"
+        className="category-carousel-next inset-y-0 -right-12 my-auto size-8 sm:-right-8 xl:size-7"
         aria-label={`${t("nextCategories")}, ${t("hiddenCategories", { count: carousel.right })}`}
         onClick={carousel.scrollNext}
         disabled={!carousel.canScrollNext}
       />
       <span
-        className="pointer-events-none absolute top-1/2 -left-10 mt-6 w-8 text-center text-xs tabular-nums xl:-left-11 xl:w-7"
+        className="category-carousel-previous pointer-events-none absolute top-1/2 -left-12 mt-4 w-8 text-center text-xs tabular-nums sm:-left-8 xl:w-7"
         aria-hidden
       >
         {carousel.left > 0 ? `+${carousel.left}` : null}
       </span>
       <span
-        className="pointer-events-none absolute top-1/2 -right-10 mt-6 w-8 text-center text-xs tabular-nums xl:-right-11 xl:w-7"
+        className="category-carousel-next pointer-events-none absolute top-1/2 -right-12 mt-4 w-8 text-center text-xs tabular-nums sm:-right-8 xl:w-7"
         aria-hidden
       >
         {carousel.right > 0 ? `+${carousel.right}` : null}

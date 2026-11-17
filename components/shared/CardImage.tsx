@@ -16,7 +16,7 @@ const CardImage = ({ imageURL, alt, sizes, eager = false }: IProps): ReactElemen
 
   return (
     // transforms a fixed size compositor layer, the bitmap itself never changes its layout or scale mode.
-    <div className="pointer-events-none absolute inset-0 transform-[translate3d(0,0,0)_scale(1)] backface-hidden transition-transform duration-400 ease-in-out will-change-transform motion-safe:group-hover/card:transform-[translate3d(0,0,0)_scale(1.15)] motion-reduce:transition-none motion-reduce:will-change-auto">
+    <div className="pointer-events-none absolute inset-0 transform-[translate3d(0,0,0)_scale(1)] backface-hidden transition-transform duration-400 ease-in-out will-change-transform motion-safe:group-hover/card:transform-[translate3d(0,0,0)_scale(1.08)] motion-reduce:transition-none motion-reduce:will-change-auto">
       <Image
         src={imageURL}
         alt={alt}

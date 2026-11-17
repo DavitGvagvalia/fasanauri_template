@@ -43,7 +43,7 @@ const LanguageSwitcher = (): ReactElement => {
           <Button
             variant="ghost"
             aria-label={t("language")}
-            className="mr-1 h-5 w-7.5 sm:h-7 sm:w-10.5 shrink-0 overflow-hidden rounded-md border-0 bg-transparent p-0 transition-opacity hover:bg-transparent hover:opacity-85 sm:mr-2"
+            className="h-5 w-7.5 sm:h-7 sm:w-10.5 shrink-0 overflow-hidden rounded-md border-0 bg-transparent p-0 transition-opacity hover:bg-transparent hover:opacity-85"
           />
         }
       >
@@ -58,7 +58,7 @@ const LanguageSwitcher = (): ReactElement => {
       </SheetTrigger>
       <SheetContent
         showCloseButton={false}
-        className="data-[side=right]:w-full data-[side=right]:sm:max-w-md"
+        className="notice-side-sheet data-[side=right]:w-full data-[side=right]:sm:max-w-md"
       >
         <SheetHeader className="border-b px-5 py-6 pr-14">
           <SheetTitle>{t("language")}</SheetTitle>

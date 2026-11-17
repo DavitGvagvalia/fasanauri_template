@@ -53,7 +53,7 @@ const PlaceSwitcher = (): ReactElement => {
       <SheetContent
         side="left"
         showCloseButton={false}
-        className="data-[side=left]:w-full data-[side=left]:sm:max-w-md"
+        className="notice-side-sheet data-[side=left]:w-full data-[side=left]:sm:max-w-md"
       >
         <SheetHeader className="border-b px-5 py-6 pr-14">
           <SheetTitle>{t("title")}</SheetTitle>

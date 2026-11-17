@@ -2,7 +2,7 @@
 
 import type { ReactElement } from "react"
 
-import { ShoppingBag } from "lucide-react"
+import { ShoppingCart } from "lucide-react"
 import { useTranslations } from "next-intl"
 import CartLine from "@/components/features/cart/CartLine"
 import CartItemsSkeleton from "@/components/features/cart/CartItemsSkeleton"
@@ -10,20 +10,26 @@ import { useCart } from "@/hooks/useCart"
 
 interface IProps {
   showDescription?: boolean
+  compact?: boolean
 }
 
-const CartItems = ({ showDescription = false }: IProps): ReactElement => {
+const CartItems = ({ showDescription = false, compact = false }: IProps): ReactElement => {
   const t = useTranslations("Cart")
   const lines = useCart((state) => state.lines)
   const ready = useCart((state) => state.ready)
 
   if (!ready) {
-    return <CartItemsSkeleton showDescription={showDescription} />
+    return (
+      <CartItemsSkeleton
+        showDescription={showDescription}
+        compact={compact}
+      />
+    )
   }
   if (!lines.length) {
     return (
       <div className="flex flex-col items-center gap-3 py-16 text-center">
-        <ShoppingBag
+        <ShoppingCart
           className="size-10 text-muted-foreground"
           aria-hidden
         />
@@ -40,6 +46,7 @@ const CartItems = ({ showDescription = false }: IProps): ReactElement => {
           key={`${line.product.id}:${line.serving}`}
           line={line}
           showDescription={showDescription}
+          compact={compact}
         />
       ))}
     </ul>

@@ -2,6 +2,7 @@ import assert from "node:assert/strict"
 import { test } from "node:test"
 
 import { ECategory, EPlace } from "@/constants"
+import { saveProductOrder } from "@/lib/cart/saveProductOrder"
 import { createCartStore } from "@/lib/cart/createCartStore"
 import { getCartStore } from "@/lib/cart/getCartStore"
 import { productDetailsCache } from "@/lib/menu/productDetailsCache"
@@ -130,4 +131,26 @@ test("opening product details preserves the cart and preserves URL filters and s
   assert.equal(url.searchParams.get("product"), beverage.id)
   assert.equal(url.searchParams.get("serving"), "glass")
   assert.equal(productDetailsCache.get(beverage.id), beverage)
+})
+
+test("product details save absolute quantities and remove only the selected serving at zero", () => {
+  const store = createCartStore()
+  store.getState().hydrate()
+  saveProductOrder(store.getState(), { product: beverage, serving: "bottle", quantity: 2 })
+  saveProductOrder(store.getState(), { product: beverage, serving: "glass", quantity: 3 })
+  saveProductOrder(store.getState(), { product: beverage, serving: "bottle", quantity: 4 })
+  saveProductOrder(store.getState(), { product: beverage, serving: "bottle", quantity: 4 })
+
+  assert.equal(store.getState().count, 7)
+  assert.equal(store.getState().totalMinor, 7 * beverage.priceMinor)
+  saveProductOrder(store.getState(), { product: beverage, serving: "bottle", quantity: 0 })
+  assert.deepEqual(
+    store.getState().lines.map((line) => [line.serving, line.quantity]),
+    [["glass", 3]]
+  )
+  saveProductOrder(store.getState(), { product: food, serving: null, quantity: 0 })
+  assert.equal(store.getState().lines.length, 1)
+  saveProductOrder(store.getState(), { product: beverage, serving: "glass", quantity: 1 })
+  assert.equal(store.getState().count, 1)
+  assert.equal(store.getState().totalMinor, beverage.priceMinor)
 })

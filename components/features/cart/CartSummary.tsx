@@ -22,6 +22,7 @@ const CartSummary = (): ReactElement => {
         <span>{t("total")}</span>
         <span className="tabular-nums">{formatPrice(totalMinor, locale)}</span>
       </div>
+      <p className="text-sm leading-6 text-muted-foreground">{t("deliveryExtra")}</p>
     </div>
   )
 }

@@ -12,8 +12,8 @@ const AboutPlaceLoading = (): ReactElement => {
       aria-busy="true"
       aria-label={t("loading")}
     >
-      <Skeleton className="h-[65svh] min-h-80 w-full rounded-none" />
-      <div className="site-container grid gap-12 py-12 md:grid-cols-2">
+      <Skeleton className="h-[71.5svh] min-h-88 w-full rounded-none" />
+      <div className="site-container max-w-[1200px] grid gap-12 py-12 md:grid-cols-2">
         <Skeleton className="h-96" />
         <Skeleton className="h-96" />
       </div>

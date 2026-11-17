@@ -1,0 +1,14 @@
+export const DEMO_DELIVERY_FEE_MINOR = 500
+export const DEMO_ESTIMATED_DURATION_MINUTES = 35
+export const DEMO_TRANSITION_ORDER_ID = 6
+export const DEMO_CONFIRMATION_DELAY_MS = 10_000
+export const MAX_ORDER_NOTE_LENGTH = 500
+export const ORDER_MINUTE_MS = 60_000
+export const ORDER_TIME_ZONE = "Asia/Tbilisi"
+export const ORDER_CLOCK_TICK_MS = 1000
+export const ORDER_NOTICE_WIDTH_PX = 280
+export const ORDER_NOTICE_HEIGHT_PX = 104
+export const ORDER_NOTICE_COLLAPSED_SIZE_PX = 44
+export const ORDER_NOTICE_GAP_PX = 12
+export const ORDER_DRAWER_WIDTH_PX = 448
+export const ORDER_MOBILE_BREAKPOINT_PX = 640

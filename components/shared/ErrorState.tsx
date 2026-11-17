@@ -1,11 +1,13 @@
 "use client"
 
-import type { ReactElement } from "react"
+import type { MouseEvent, ReactElement } from "react"
 
-import { ArrowLeft, RotateCcw, Utensils } from "lucide-react"
+import { ArrowLeft, RotateCcw } from "lucide-react"
 import { useTranslations } from "next-intl"
 import { Button, buttonVariants } from "@/components/ui/button"
+import BrandLogo from "@/components/shared/BrandLogo"
 import { Link } from "@/i18n/navigation"
+import { goBackFromError } from "@/lib/navigation/goBackFromError"
 
 interface IProps {
   kind: "notFound" | "unexpected"
@@ -14,6 +16,15 @@ interface IProps {
 
 const ErrorState = ({ kind, onRetry }: IProps): ReactElement => {
   const t = useTranslations("Errors")
+
+  const goBack = (event: MouseEvent<HTMLAnchorElement>): void => {
+    if (event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) {
+      return
+    }
+    if (goBackFromError()) {
+      event.preventDefault()
+    }
+  }
 
   return (
     <main
@@ -24,10 +35,7 @@ const ErrorState = ({ kind, onRetry }: IProps): ReactElement => {
         href="/"
         className="mb-8 flex items-center gap-2 text-lg font-semibold"
       >
-        <Utensils
-          className="size-5"
-          aria-hidden
-        />
+        <BrandLogo className="size-8 shrink-0 sm:size-10" />
         {t("brand")}
       </Link>
       <div className="flex w-full flex-col items-center rounded-2xl border bg-muted/30 px-5 py-14 sm:py-20">
@@ -52,10 +60,8 @@ const ErrorState = ({ kind, onRetry }: IProps): ReactElement => {
           )}
           <Link
             href="/"
-            className={buttonVariants({
-              variant: "outline",
-              className: "h-11",
-            })}
+            onClick={goBack}
+            className={buttonVariants({ variant: "outline", className: "h-11" })}
           >
             <ArrowLeft aria-hidden />
             {t("back")}

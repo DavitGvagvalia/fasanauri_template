@@ -2,13 +2,17 @@
 import { useEffect } from "react"
 import type { ReactElement, ReactNode } from "react"
 import { useTheme } from "@/hooks/useTheme"
+import { updateAppThemeColor } from "@/lib/pwa/updateAppThemeColor"
 
 interface IProps {
   children: ReactNode
 }
 
 const ThemeProvider = ({ children }: IProps): ReactElement => {
-  const { setTheme } = useTheme()
+  const { theme, setTheme } = useTheme()
+  useEffect(() => {
+    updateAppThemeColor(theme)
+  }, [theme])
   useEffect(() => {
     let saved: string | null = null
     try {

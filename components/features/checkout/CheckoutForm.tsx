@@ -6,15 +6,18 @@ import { zodResolver } from "@hookform/resolvers/zod"
 import { Controller, useForm } from "react-hook-form"
 import { useTranslations } from "next-intl"
 
+import CtaPattern from "@/components/shared/CtaPattern"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
+import { Textarea } from "@/components/ui/textarea"
+import { MAX_ORDER_NOTE_LENGTH } from "@/constants"
 import { checkoutSchema } from "@/schemas/checkoutSchema"
 import CheckoutPhoneInput from "@/components/features/checkout/CheckoutPhoneInput"
 import type { TCheckoutValues } from "@/types/checkout"
 
 interface IProps {
-  onComplete: () => void
+  onComplete: (values: TCheckoutValues) => void
   disabled?: boolean
 }
 
@@ -28,14 +31,14 @@ const CheckoutForm = ({ onComplete, disabled = false }: IProps): ReactElement =>
   } = useForm<TCheckoutValues>({
     resolver: zodResolver(checkoutSchema),
     mode: "all",
-    defaultValues: { name: "", phone: "", address: "" },
+    defaultValues: { name: "", phone: "", address: "", note: "" },
   })
 
   return (
     <form
       noValidate
       onSubmit={handleSubmit(onComplete)}
-      className="space-y-5"
+      className="space-y-4"
     >
       <div className="space-y-2">
         <Label htmlFor="checkout-name">{t("name")}</Label>
@@ -106,11 +109,34 @@ const CheckoutForm = ({ onComplete, disabled = false }: IProps): ReactElement =>
           </p>
         )}
       </div>
+      <div className="space-y-2">
+        <Label htmlFor="checkout-note">{t("note")}</Label>
+        <Textarea
+          id="checkout-note"
+          placeholder={t("notePlaceholder")}
+          maxLength={MAX_ORDER_NOTE_LENGTH}
+          rows={3}
+          aria-invalid={!!errors.note}
+          aria-describedby={errors.note ? "note-error" : undefined}
+          {...register("note")}
+        />
+        {errors.note && (
+          <p
+            id="note-error"
+            role="alert"
+            className="text-sm text-destructive"
+          >
+            {t("noteError")}
+          </p>
+        )}
+      </div>
+      <p className="text-xs leading-5 text-muted-foreground">{t("privacy")}</p>
       <Button
         type="submit"
         disabled={disabled || isSubmitting || !isValid}
-        className="h-11 w-full"
+        className="relative isolate h-11 w-full overflow-hidden"
       >
+        <CtaPattern />
         {t("submit")}
       </Button>
     </form>
